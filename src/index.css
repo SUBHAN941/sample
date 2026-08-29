@@ -1,1 +1,112 @@
 @import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   Happy Paws · design tokens
+--------------------------------------------------------------------------- */
+:root {
+  /* Typography */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    sans-serif;
+
+  /* Warm neutrals */
+  --color-cream-50: #fdfaf5;
+  --color-cream-100: #faf4ec;
+  --color-cream-200: #f2eae0;
+  --color-cream-300: #e7dccc;
+
+  /* Brand — terracotta rose */
+  --color-brand-50: #fbf2f0;
+  --color-brand-100: #f6e4e0;
+  --color-brand-200: #efd1cb;
+  --color-brand-300: #e4b6ae;
+  --color-brand-400: #d6978e;
+  --color-brand-500: #c47c72;
+  --color-brand-600: #ac6258;
+  --color-brand-700: #8c4b44;
+
+  /* Cocoa — deep browns */
+  --color-cocoa-700: #46332c;
+  --color-cocoa-800: #372822;
+  --color-cocoa-900: #2c1f1a;
+  --color-cocoa-950: #241813;
+
+  /* Ink — text */
+  --color-ink-900: #2b211d;
+  --color-ink-600: #5c4b44;
+  --color-ink-500: #7a675f;
+  --color-ink-400: #9c8a82;
+
+  /* Misc */
+  --color-good: #47663b;
+  --color-good-bg: #eaf3e6;
+
+  --radius-card: 24px;
+  --shadow-soft: 0 24px 50px -30px rgb(44 31 26 / 0.28);
+  --shadow-lift: 0 30px 60px -32px rgb(44 31 26 / 0.35);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------------------------------------------------------------------------
+   Base
+--------------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 92px;
+}
+
+body {
+  margin: 0;
+  background: var(--color-cream-50);
+  color: var(--color-ink-600);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+img {
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--color-brand-200);
+  color: var(--color-cocoa-900);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
